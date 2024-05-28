@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+	Qidiruv natijalari
+{% endblock %}
+
+{% block content %}
+	<h2>qidiruv natijalari</h2>
+    {% for home in barcha_homes %}
+        <a href="{% url 'homes_detail' home.pk %}"><h4 class="text-info">{{ home.title }}</h4></a>
+    {% endfor %}
+{% endblock %}

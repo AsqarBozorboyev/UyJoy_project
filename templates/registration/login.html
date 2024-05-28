@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+	Login sahifasi
+{% endblock title %}
+
+
+{% block content %}
+
+    <h2>Veb-saytga kirish - Login</h2>
+
+    <p>Iltimos saytga kirish uchun quydagi formani to'ldiring</p>
+
+    <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">LogIn</button>
+
+    </form>
+
+    <a class="btn btn-primary mt-2" href="{% url 'password_reset' %}">Parolni tiklash</a>
+    <a class="btn btn-primary mt-2 " href="{% url 'user_register' %}">Ro'yxatdan o'tish</a>
+
+{% endblock content %}

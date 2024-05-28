@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Foydalanuvchi profile{% endblock %}
+
+{% block content %}
+
+	<h3>Xush kelibsiz, {{ user.username }} </h3>
+    <h2>siz haqingizda malumotlar</h2>
+    <img src="{{ profile.photo.url }}" style="width: 30%" alt="" class="mb-4"><br>
+    <h4>Tug'lgan yilingiz:{{ profile.date_of_birth }}</h4>
+    <label>Username:</label><input value="{{ user.username }}" readonly placeholder="kiritilmagan"><br>
+    <label>Emailingiz:</label><input value="{{ user.email }}" readonly placeholder="kiritilmagan"><br>
+    <label>Ismingiz:</label><input value="{{ user.first_name }}" readonly placeholder="kiritilmagan"><br>
+    <label>Familiyaт giz:</label><input value="{{ user.last_name }}" readonly placeholder="kiritilmagan"><br><br><br>
+
+<div class="row m-1">
+    <h4><a class="btn col-6 btn-danger" href="{% url 'password_change' %}">Parolni almashtrish</a><a class="btn btn-dark col-6" href="{% url 'logout' %}">LogOut</a></h4><br>
+    <h3><a class="btn btn-primary col-12" href="{% url 'edit_user_information' %}">Profil malumotlarini o'zgartirish</a>
+        <a class="btn btn-info col-12" href="{% url 'homes_create' %}">E'lon berish</a></h3>
+</div>
+
+{% endblock %}

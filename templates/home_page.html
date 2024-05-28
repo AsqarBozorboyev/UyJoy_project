@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load hitcount_tags %}
+
+
+{% block content %}
+
+
+  <div class="main-banner">
+    <div class="owl-carousel owl-banner">
+      <div class="item item-1">
+        <div class="header-text">
+          <span class="category">Toronto, <em>Canada</em></span>
+          <h2>Hurry!<br>Get the Best Villa for you</h2>
+        </div>
+      </div>
+      <div class="item item-2">
+        <div class="header-text">
+          <span class="category">Melbourne, <em>Australia</em></span>
+          <h2>Be Quick!<br>Get the best villa in town</h2>
+        </div>
+      </div>
+      <div class="item item-3">
+        <div class="header-text">
+          <span class="category">Miami, <em>South Florida</em></span>
+          <h2>Act Now!<br>Get the highest level penthouse</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    {% for maxsus in maxsus %}
+
+
+
+  <div class="featured section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image">
+            <img src="{{ maxsus.image.url }}" alt="">
+            <a href="{% url 'homes_detail' maxsus.pk %}"><img src="{% static 'images/featured-icon.png' %}" alt="" style="max-width: 60px; padding: 0px;"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <h6>| Maxsus</h6>
+            <h2>Eng yaxshilari siz uchun</h2>
+               <p><i class="fa fa-eye" aria-hidden="true"> </i> {% get_hit_count for maxsus %}</p>
+              <h4>{{ maxsus.manzil }}</h4>
+
+
+          </div>
+
+        </div>
+        <div class="col-lg-3" >
+          <a href="{% url 'homes_detail' maxsus.pk %}">
+
+          <div class="info-table">
+            <ul>
+              <li>
+{#                <img src="{% static 'images/info-icon-01.png' %}" alt="" style="max-width: 52px;">#}
+
+                <h4>{{ maxsus.maydoni }}<br><span>Umumiy maydoni</span></h4>
+              </li>
+              <li>
+{#                <img src="{% static 'images/info-icon-02.png' %}" alt="" style="max-width: 52px;">#}
+                <h4>{{ maxsus.xona_soni }}<br><span>Xonalar soni</span></h4>
+              </li>
+              <li>
+{#                <img src="{% static 'images/info-icon-03.png' %}" alt="" style="max-width: 52px;">#}
+                <h4>{{ maxsus.narxi }}<br><span>Narxi</span></h4>
+              </li>
+              <li>
+{#                <img src="{% static 'images/info-icon-04.png' %}" alt="" style="max-width: 52px;">#}
+                <h4>+998{{ maxsus.tel }}<br><span>Aloqa uchun tel</span></h4>
+              </li>
+            </ul>
+          </div>
+               </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+
+  <div class="video section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| Video View</h6>
+
+            <h2>Get Closer View & Different Feeling</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="video-frame">
+            <img src="{% static 'images/video-frame.jpg' %}" alt="">
+            <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fun-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="wrapper">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="34" data-speed="1000"></h2>
+                   <p class="count-text ">Buildings<br>Finished Now</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="12" data-speed="1000"></h2>
+                  <p class="count-text ">Years<br>Experience</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="24" data-speed="1000"></h2>
+                  <p class="count-text ">Awwards<br>Won 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="properties section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| Properties</h6>
+            <h2>We Provide The Best Property You Like</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          {% for orta in orta %}
+
+
+
+{#        <div class="col-lg-4 col-md-6">#}
+{#          <div class="item">#}
+{#            <a href="{% url 'homes_detail' orta.pk %}"><img src="{{ orta.image.url }}" alt=""></a>#}
+{#            <span class="category">{{ orta.category }}</span>#}
+{#            <h6>{{ orta.narxi }}</h6>#}
+{#            <h4><a href="{% url 'homes_detail' orta.pk %}">{{ orta.manzil }}</a></h4>#}
+{#            <ul>#}
+{#               <li>Xonalar: <span>{{ homes.xona_soni }}</span></li>#}
+{##}
+{#              <li>maydoni: <span>{{ homes.maydoni }}</span></li>#}
+{#            </ul>#}
+{##}
+{#          </div>#}
+{#        </div>#}
+
+              <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 ">
+
+            <div class="item" style="height: 550px">
+            <a href="{% url 'homes_detail' orta.pk %}"><img class="ratio ratio-1x1" src="{{ orta.image.url }}" alt="" height="250px"></a>
+
+            <span class="category">{{ orta.category }}</span>
+            <h6>{{ orta.narxi }}</h6>
+             <p><i class="fa fa-eye" aria-hidden="true"> </i> {% get_hit_count for orta %}</p>
+            <h4><a href="{% url 'homes_detail' orta.pk %}">{{ orta.manzil }}</a></h4>
+            <ul>
+              <li>Xonalar: <span>{{ orta.xona_soni }}</span></li>
+
+              <li>maydoni: <span>{{ orta.maydoni }}</span></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+ {% endblock content %}

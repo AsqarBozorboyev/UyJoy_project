@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+	E'lon qo'shish
+{% endblock %}
+
+{% block content %}
+
+<h2 class="text-center">YAngi e'lon qo'shish</h2>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-info ml-2">tahrirlash</button>
+    </form>
+
+
+
+  {% endblock %}

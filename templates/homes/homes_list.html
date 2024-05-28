@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for homes in homes_list %}
+    <a href="{% url 'homes_detail' homes.pk %}">
+    <h2>{{ homes.title }}</h2>
+    </a>
+    <span>{{ homes.narxi }}</span>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load hitcount_tags %}
+
+{% block title %}
+	detail
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <span class="breadcrumb"><a href="#">Home</a>  /  Single Property</span>
+          <h3>Single Property</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="section best-deal">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="section-heading">
+                  <h6>| Eng yaxshi {{ homes.category }}lar faqat bizda</h6>
+                  <h2>Siz eng yaxshisizga loyiqsiz!</h2>
+              </div>
+          </div>
+        <div class="col-lg-12">
+          <div class="tabs-content">
+
+
+                  <div class="row">
+                    <div class="col-lg-3">
+                      <div class="info-table">
+                        <ul>
+                          <li>Maydoni<span>{{ homes.maydoni }}</span></li>
+                          <li>Xonalar soni <span>{{ homes.xona_soni }}</span></li>
+{#                          <li>Number of rooms <span>8</span></li>#}
+                          <li>Holati:<span>{{ homes.tamiri }}</span></li>
+                          <li>Narxi:<span>{{ homes.narxi }}</span></li>
+                            <li>Tel:<span>+998{{ homes.tel }}</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <img src="{{ homes.image.url }}" alt="">
+
+                    </div>
+                    <div class="col-lg-3">
+
+                        <h3>{{ homes.title }}<br></h3><span class="text-muted">{{ homes.publish_time }}| <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for homes %}</span>
+
+                        <p class="mt-5">
+                            {{ homes.sharoitlari }}<br>
+                            Yaqin manzillar{{ homes.yaqin_manzillar }}<br>
+                            {{ homes.tafsilotlari }}<br>
+                        </p>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% if request.user.is_authenticated and request.user.is_superuser %}
+
+
+<div class="card-footer text-center">
+    <a class="btn btn-info" href="{% url 'update' homes.pk %}">Tahrirlash</a>
+    <a class="btn btn-danger" href="{% url 'homes_delete' homes.pk %}">O'chirish</a>
+</div>
+{% endif %}<br>
+
+    {% for comment in comments %}
+
+        <div class="comment " style="padding: 10px">
+        <h6 class="font-weight-bold comment">
+            {{ comment.user }}
+
+        </h6><span class="text-muted font-weight-normal text- ">
+                {{ comment.created_time }}
+            </span>
+        <p class="fw-light">{{ comment.body | linebreaks }}</p>
+        </div>
+    {% endfor %}
+
+
+{% if user.is_authenticated %}
+    <div class="col-md-8 card mb-4 mt-3">
+        <div class="card-body">
+            <h3>Izoh qoldirish</h3>
+            <form method="post" style="margin-top: 1.3em">{% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="btn btn-primary">Yuborish</button>
+            </form>
+        </div>
+    </div>
+{% else %}
+    <div class="card-body">
+    <p class="text-danger">Faqatgina ro'yxatdan o'tgan foydalanuvchiar izoh qoldirishi mumkin</p>
+    <p>Izoh qoldiris uchun <a href="{% url 'user_register' %}">ro'yxatdan o'ting</a> yoki <a href="{% url 'login' %}">saytga kiring</a></p>
+    </div>
+
+{% endif %}
+
+  {% endblock %}

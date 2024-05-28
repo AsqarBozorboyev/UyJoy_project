@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+<h2 class="text-center">Joriy postni o'chirish</h2>
+    <form action="" method="post">{% csrf_token %}
+    <p>{{ homes.title }}..... postni o'chirmoqchmisiz?</p>
+    <button type="submit" class="btn btn-danger">tasdiqlayman</button>
+    </form>
+{% endblock %}
