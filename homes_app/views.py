@@ -19,7 +19,7 @@ def homes_list(request):
     catigory = Category.objects.all()
     context = {
         'homes_list': homes_list,
-        'catigory': catigory
+        'catigory': catigory,
     }
     return render(request, "homes_list.html", context)
 
@@ -42,7 +42,9 @@ def homes_detail(request, id):
 
 
     comments = homes.comments.filter(active=True)
+    comment_count = comments.count()
     new_comment = None
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -56,6 +58,7 @@ def homes_detail(request, id):
     context = {
         'homes': homes,
         'comments': comments,
+        'comment_count': comment_count,
         'new_comment': new_comment,
         'comment_form': comment_form
 

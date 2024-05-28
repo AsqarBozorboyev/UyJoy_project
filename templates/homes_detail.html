@@ -54,8 +54,9 @@
                     </div>
                     <div class="col-lg-3">
 
-                        <h3>{{ homes.title }}<br></h3><span class="text-muted">{{ homes.publish_time }}| <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for homes %}</span>
-
+                        <h3>{{ homes.title }}<br></h3><span class="text-muted">{{ homes.publish_time }} |
+                        <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for homes %}</span> |
+                        <i class="fa fa-comment"></i>{{ comment_count }}
                         <p class="mt-5">
                             {{ homes.sharoitlari }}<br>
                             Yaqin manzillar{{ homes.yaqin_manzillar }}<br>
@@ -79,7 +80,9 @@
     <a class="btn btn-danger" href="{% url 'homes_delete' homes.pk %}">O'chirish</a>
 </div>
 {% endif %}<br>
-
+    {% if comment_count != 0 %}
+<h3>Bu yangilikka {{ comment_count }} ta izoh qoldirilgan</h3>
+    {% endif %}
     {% for comment in comments %}
 
         <div class="comment " style="padding: 10px">
