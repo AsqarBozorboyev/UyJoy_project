@@ -118,7 +118,7 @@ class ContactPageView(TemplateView):
 
 class HomesUpdateView(OnlyLoggedSuperUser, UpdateView):
     model = Homes
-    fields = ('title', 'maydoni', 'xona_soni', 'tamiri', 'narxi', 'tel', 'image', 'manzil')
+    fields = ('title_uz', 'title_en', 'title_ru', 'manzil_uz', 'manzil_ru', 'manzil_en', 'maydoni', 'xona_soni', 'tamiri', 'narxi', 'tel', 'image', 'tafsilotlari', 'category')
     template_name = 'crud/homes_edit.html'
     success_url = reverse_lazy('homes_list')
 
@@ -130,7 +130,7 @@ class HomesDeleteView(OnlyLoggedSuperUser, DeleteView):
 class HomesCreateView(CreateView):
     model = Homes
     template_name = 'crud/homes_create.html'
-    fields = '__all__'
+    fields = ('title_uz', 'title_en', 'title_ru', 'manzil_uz', 'manzil_ru', 'manzil_en', 'maydoni', 'xona_soni', 'tamiri', 'narxi', 'tel', 'image', 'tafsilotlari', 'category')
     success_url = reverse_lazy('homes_list')
 @login_required
 @user_passes_test(lambda u:u.is_superuser)
