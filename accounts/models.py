@@ -6,7 +6,7 @@ from django.db import models
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to='users/', blank=True, null=True)
+    photo = models.ImageField(upload_to='users/', blank=True, null=True, default='users/none.png')
     date_of_birth = models.DateField(blank=True, null=True)
 
     def __str__(self):

@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-30 00:30+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\templates\home_page.html:7
+msgid " Bosh sahifa "
+msgstr "Главная страница"
+
+#: .\templates\home_page.html:19
+msgid "Shoshiling!"
+msgstr "Торопиться!"
+
+#: .\templates\home_page.html:19
+msgid "Siz uchun eng yaxshi uylar"
+msgstr "Лучшие дома для вас"
+
+#: .\templates\home_page.html:24
+msgid "Shahar atrofidan ko'chmas mulklar"
+msgstr "Недвижимость в пригороде"
+
+#: .\templates\home_page.html:30
+msgid "Tijorat uchun ko'chmas mulklar"
+msgstr "Коммерческая недвижимость"
+
+#: .\templates\home_page.html:52
+msgid " Maxsus"
+msgstr "Особенный"
+
+#: .\templates\home_page.html:53
+msgid "Eng yaxshilari siz uchun"
+msgstr "Все лучшее для тебя"
+
+#: .\templates\home_page.html:69
+msgid "Umumiy maydoni"
+msgstr "Общая площадь"
+
+#: .\templates\home_page.html:73
+msgid "Xonalar soni"
+msgstr "Количество комнат"
+
+#: .\templates\home_page.html:77
+msgid "Narxi"
+msgstr "Расходы"
+
+#: .\templates\home_page.html:81
+msgid "Aloqa uchun tel"
+msgstr "Телефон для связи"
+
+#: .\templates\home_page.html:98
+msgid "Video ko'rish"
+msgstr "Смотреть видео"
+
+#: .\templates\home_page.html:100
+msgid "Biz haqimizda to'liqroq malmotga ega bo'ling"
+msgstr "Узнайте больше о нас"
+
+#: .\templates\home_page.html:129
+msgid "Shartnomalar"
+msgstr "Соглашения"
+
+#: .\templates\home_page.html:135
+msgid "Yillik tajriba"
+msgstr "Годы опыта"
+
+#: .\templates\home_page.html:141
+msgid "Ko'chmas mulk"
+msgstr "недвижимость"
+
+#: .\templates\home_page.html:158
+msgid "Taklif"
+msgstr "Предложение"
+
+#: .\templates\home_page.html:159
+msgid "Biz sizga eng yaxshi uylarni taqdim etamiz"
+msgstr "Мы предлагаем вам лучшие дома"
+
+#: .\uy_joy_savdo\settings.py:124
+msgid "Uzbek"
+msgstr "Uzbek"
+
+#: .\uy_joy_savdo\settings.py:125
+msgid "English"
+msgstr "English"
+
+#: .\uy_joy_savdo\settings.py:126
+msgid "Russian"
+msgstr "Russian"

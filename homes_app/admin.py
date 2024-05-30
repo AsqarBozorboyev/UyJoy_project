@@ -4,7 +4,7 @@ from .models import Homes, Category, Contact, Comment
 
 @admin.register(Homes)
 class HomesAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'manzil', 'category', 'narxi')
+    list_display = ('title', 'manzil', 'category', 'narxi')
     list_filter = ['category', 'narxi']
     search_fields = ['title', 'manzil', 'category', 'narxi']
     ordering = ['status', 'publish_time']

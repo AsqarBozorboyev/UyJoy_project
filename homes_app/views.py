@@ -127,7 +127,7 @@ class HomesDeleteView(OnlyLoggedSuperUser, DeleteView):
     template_name = 'crud/homes_delete.html'
     success_url = reverse_lazy('home_page')
 
-class HomesCreateView(OnlyLoggedSuperUser,CreateView):
+class HomesCreateView(CreateView):
     model = Homes
     template_name = 'crud/homes_create.html'
     fields = '__all__'

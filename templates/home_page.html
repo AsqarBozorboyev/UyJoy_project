@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load hitcount_tags %}
+{% load i18n %}
+
+{% block title %}
+    {% blocktrans %} Bosh sahifa {% endblocktrans %}
+{% endblock title %}
+
 
 
 {% block content %}
@@ -10,20 +16,18 @@
     <div class="owl-carousel owl-banner">
       <div class="item item-1">
         <div class="header-text">
-          <span class="category">Toronto, <em>Canada</em></span>
-          <h2>Hurry!<br>Get the Best Villa for you</h2>
+          <h2>{% blocktrans %}Shoshiling!{% endblocktrans %}<br>{% blocktrans %}Siz uchun eng yaxshi uylar{% endblocktrans %}</h2>
         </div>
       </div>
       <div class="item item-2">
         <div class="header-text">
-          <span class="category">Melbourne, <em>Australia</em></span>
-          <h2>Be Quick!<br>Get the best villa in town</h2>
+          <h2>{% blocktrans %}Shahar atrofidan ko'chmas mulklar{% endblocktrans %}</h2>
         </div>
       </div>
       <div class="item item-3">
         <div class="header-text">
           <span class="category">Miami, <em>South Florida</em></span>
-          <h2>Act Now!<br>Get the highest level penthouse</h2>
+          <h2>{% blocktrans %}Tijorat uchun ko'chmas mulklar{% endblocktrans %}</h2>
         </div>
       </div>
     </div>
@@ -45,8 +49,8 @@
 
         <div class="col-lg-5">
           <div class="section-heading">
-            <h6>| Maxsus</h6>
-            <h2>Eng yaxshilari siz uchun</h2>
+            <h6>|{% blocktrans %} Maxsus{% endblocktrans %}</h6>
+            <h2>{% blocktrans %}Eng yaxshilari siz uchun{% endblocktrans %}</h2>
                <p><i class="fa fa-eye" aria-hidden="true"> </i> {% get_hit_count for maxsus %}</p>
               <h4>{{ maxsus.manzil }}</h4>
 
@@ -62,19 +66,19 @@
               <li>
 {#                <img src="{% static 'images/info-icon-01.png' %}" alt="" style="max-width: 52px;">#}
 
-                <h4>{{ maxsus.maydoni }}<br><span>Umumiy maydoni</span></h4>
+                <h4>{{ maxsus.maydoni }}<br><span>{% blocktrans %}Umumiy maydoni{% endblocktrans %}</span></h4>
               </li>
               <li>
 {#                <img src="{% static 'images/info-icon-02.png' %}" alt="" style="max-width: 52px;">#}
-                <h4>{{ maxsus.xona_soni }}<br><span>Xonalar soni</span></h4>
+                <h4>{{ maxsus.xona_soni }}<br><span>{% blocktrans %}Xonalar soni{% endblocktrans %}</span></h4>
               </li>
               <li>
 {#                <img src="{% static 'images/info-icon-03.png' %}" alt="" style="max-width: 52px;">#}
-                <h4>{{ maxsus.narxi }}<br><span>Narxi</span></h4>
+                <h4>{{ maxsus.narxi }}<br><span>{% blocktrans %}Narxi{% endblocktrans %}</span></h4>
               </li>
               <li>
 {#                <img src="{% static 'images/info-icon-04.png' %}" alt="" style="max-width: 52px;">#}
-                <h4>+998{{ maxsus.tel }}<br><span>Aloqa uchun tel</span></h4>
+                <h4>+998{{ maxsus.tel }}<br><span>{% blocktrans %}Aloqa uchun tel{% endblocktrans %}</span></h4>
               </li>
             </ul>
           </div>
@@ -91,9 +95,9 @@
       <div class="row">
         <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
-            <h6>| Video View</h6>
+            <h6>| {% blocktrans %}Video ko'rish{% endblocktrans %}</h6>
 
-            <h2>Get Closer View & Different Feeling</h2>
+            <h2>{% blocktrans %}Biz haqimizda to'liqroq malmotga ega bo'ling{% endblocktrans %} </h2>
           </div>
         </div>
       </div>
@@ -121,20 +125,20 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="counter">
-                  <h2 class="timer count-title count-number" data-to="34" data-speed="1000"></h2>
-                   <p class="count-text ">Buildings<br>Finished Now</p>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="counter">
-                  <h2 class="timer count-title count-number" data-to="12" data-speed="1000"></h2>
-                  <p class="count-text ">Years<br>Experience</p>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="counter">
                   <h2 class="timer count-title count-number" data-to="24" data-speed="1000"></h2>
-                  <p class="count-text ">Awwards<br>Won 2023</p>
+                   <p class="count-text ">{% blocktrans %}Shartnomalar{% endblocktrans %}</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="3" data-speed="1000"></h2>
+                  <p class="count-text ">{% blocktrans %}Yillik tajriba{% endblocktrans %}</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="30" data-speed="1000"></h2>
+                  <p class="count-text ">{% blocktrans %}Ko'chmas mulk{% endblocktrans %}</p>
                 </div>
               </div>
             </div>
@@ -151,8 +155,8 @@
       <div class="row">
         <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
-            <h6>| Properties</h6>
-            <h2>We Provide The Best Property You Like</h2>
+            <h6>| {% blocktrans %}Taklif{% endblocktrans %}</h6>
+            <h2>{% blocktrans %}Biz sizga eng yaxshi uylarni taqdim etamiz{% endblocktrans %}</h2>
           </div>
         </div>
       </div>
